@@ -1,4 +1,3 @@
-import 'package:provider/provider.dart';
 import 'package:stacked_app/ui/bottom_sheets/notice/notice_sheet.dart';
 import 'package:stacked_app/ui/dialogs/info_alert/info_alert_dialog.dart';
 import 'package:stacked_app/ui/views/home/home_view.dart';
