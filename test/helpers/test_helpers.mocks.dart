@@ -10,6 +10,7 @@ import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i3;
 import 'package:stacked_app/services/api_service.dart' as _i7;
+import 'package:stacked_app/services/login_service.dart' as _i8;
 import 'package:stacked_services/stacked_services.dart' as _i2;
 
 // ignore_for_file: type=lint
@@ -676,3 +677,8 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockApiService extends _i1.Mock implements _i7.ApiService {}
+
+/// A class which mocks [LoginService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockLoginService extends _i1.Mock implements _i8.LoginService {}

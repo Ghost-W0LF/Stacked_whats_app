@@ -7,6 +7,7 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_app/ui/views/text_reverse/text_reverse_view.dart';
 import 'package:stacked_app/ui/views/login/login_view.dart';
 import 'package:stacked_app/services/api_service.dart';
+import 'package:stacked_app/services/login_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -22,6 +23,7 @@ import 'package:stacked_app/services/api_service.dart';
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: ApiService),
+    LazySingleton(classType: LoginService),
 // @stacked-service
   ],
   bottomsheets: [

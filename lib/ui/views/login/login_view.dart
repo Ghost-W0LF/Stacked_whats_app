@@ -31,6 +31,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
     LoginViewModel viewModel,
     Widget? child,
   ) {
+   
     return Scaffold(
         body: SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 90),
