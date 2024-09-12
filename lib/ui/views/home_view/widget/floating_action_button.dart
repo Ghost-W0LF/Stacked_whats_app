@@ -12,8 +12,7 @@ class FloatingButton extends StatelessWidget {
       height: 40,
       width: 40,
       decoration: BoxDecoration(
-          color: whatsAppGreen,
-          borderRadius: BorderRadius.circular(50)),
+          color: whatsAppGreen, borderRadius: BorderRadius.circular(50)),
       child: IconButton(
         onPressed: () {
           // NavigationService().replaceTo('/contactView');

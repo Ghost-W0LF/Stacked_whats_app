@@ -5,89 +5,75 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i7;
+import 'package:flutter/material.dart' as _i6;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_app/ui/views/home/home_view.dart' as _i2;
-import 'package:stacked_app/ui/views/home_view/home_view_view.dart' as _i6;
-import 'package:stacked_app/ui/views/login/login_view.dart' as _i5;
-import 'package:stacked_app/ui/views/startup/startup_view.dart' as _i3;
-import 'package:stacked_app/ui/views/text_reverse/text_reverse_view.dart'
-    as _i4;
-import 'package:stacked_services/stacked_services.dart' as _i8;
+import 'package:stacked_app/ui/views/chat_details/chat_details_view.dart'
+    as _i5;
+import 'package:stacked_app/ui/views/home_view/home_view_view.dart' as _i4;
+import 'package:stacked_app/ui/views/login/login_view.dart' as _i3;
+import 'package:stacked_app/ui/views/startup/startup_view.dart' as _i2;
+import 'package:stacked_services/stacked_services.dart' as _i7;
 
 class Routes {
-  static const homeView = '/home-view';
-
   static const startupView = '/startup-view';
-
-  static const textReverseView = '/text-reverse-view';
 
   static const loginView = '/login-view';
 
   static const homeViewView = '/home-view-view';
 
+  static const chatDetailsView = '/chat-details-view';
+
   static const all = <String>{
-    homeView,
     startupView,
-    textReverseView,
     loginView,
     homeViewView,
+    chatDetailsView,
   };
 }
 
 class StackedRouter extends _i1.RouterBase {
   final _routes = <_i1.RouteDef>[
     _i1.RouteDef(
-      Routes.homeView,
-      page: _i2.HomeView,
-    ),
-    _i1.RouteDef(
       Routes.startupView,
-      page: _i3.StartupView,
-    ),
-    _i1.RouteDef(
-      Routes.textReverseView,
-      page: _i4.TextReverseView,
+      page: _i2.StartupView,
     ),
     _i1.RouteDef(
       Routes.loginView,
-      page: _i5.LoginView,
+      page: _i3.LoginView,
     ),
     _i1.RouteDef(
       Routes.homeViewView,
-      page: _i6.HomeViewView,
+      page: _i4.HomeViewView,
+    ),
+    _i1.RouteDef(
+      Routes.chatDetailsView,
+      page: _i5.ChatDetailsView,
     ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
-    _i2.HomeView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i2.HomeView(),
+    _i2.StartupView: (data) {
+      return _i6.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i2.StartupView(),
         settings: data,
       );
     },
-    _i3.StartupView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i3.StartupView(),
+    _i3.LoginView: (data) {
+      return _i6.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i3.LoginView(),
         settings: data,
       );
     },
-    _i4.TextReverseView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i4.TextReverseView(),
+    _i4.HomeViewView: (data) {
+      return _i6.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i4.HomeViewView(),
         settings: data,
       );
     },
-    _i5.LoginView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i5.LoginView(),
-        settings: data,
-      );
-    },
-    _i6.HomeViewView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i6.HomeViewView(),
+    _i5.ChatDetailsView: (data) {
+      return _i6.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i5.ChatDetailsView(),
         settings: data,
       );
     },
@@ -100,21 +86,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i8.NavigationService {
-  Future<dynamic> navigateToHomeView([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return navigateTo<dynamic>(Routes.homeView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
+extension NavigatorStateExtension on _i7.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -123,20 +95,6 @@ extension NavigatorStateExtension on _i8.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.startupView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
-  Future<dynamic> navigateToTextReverseView([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return navigateTo<dynamic>(Routes.textReverseView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -171,14 +129,14 @@ extension NavigatorStateExtension on _i8.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithHomeView([
+  Future<dynamic> navigateToChatDetailsView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return replaceWith<dynamic>(Routes.homeView,
+    return navigateTo<dynamic>(Routes.chatDetailsView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -193,20 +151,6 @@ extension NavigatorStateExtension on _i8.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.startupView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
-  Future<dynamic> replaceWithTextReverseView([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return replaceWith<dynamic>(Routes.textReverseView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -235,6 +179,20 @@ extension NavigatorStateExtension on _i8.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.homeViewView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithChatDetailsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.chatDetailsView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

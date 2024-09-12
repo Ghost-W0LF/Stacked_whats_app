@@ -822,8 +822,3 @@ class MockTokenStorageService extends _i1.Mock
         returnValueForMissingStub: _i7.Future<void>.value(),
       ) as _i7.Future<void>);
 }
-
-/// A class which mocks [UserDataServiceService].
-///
-/// See the documentation for Mockito's code generation for more information.
-

@@ -5,7 +5,7 @@ import 'package:stacked_app/ui/views/home_view/model/user_data_model.dart';
 import 'package:stacked_app/ui/views/home_view/repositort/user_repository.dart';
 
 class UserRepositoryImplements implements UserRepository {
-  final uesrDataService =locator.get<UserDataService>();
+  final uesrDataService = locator.get<UserDataService>();
   @override
   Future<UserData?> getUserData() async {
     final response = await uesrDataService.postUser();

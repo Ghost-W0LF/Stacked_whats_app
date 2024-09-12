@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:stacked_app/app/app.locator.dart';
+import 'package:stacked_app/app/app.router.dart';
 import 'package:stacked_app/ui/common/app_colors.dart';
 import 'package:stacked_app/ui/common/assets/t_image.dart';
 import 'package:stacked_app/ui/views/home_view/home_view_viewmodel.dart';
-//import 'package:stacked_services/stacked_services.dart';
+import 'package:stacked_app/ui/views/home_view/widget/home_app_bar.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class UserList extends StatelessWidget {
   const UserList({super.key});
@@ -16,7 +19,7 @@ class UserList extends StatelessWidget {
       Provider.of<HomeViewViewModel>(context, listen: false)
           .getPostData(context);
     });
-   // final _navigation = locator.get<NavigationService>();
+    final _navigation = locator.get<NavigationService>();
 
     return Consumer<HomeViewViewModel>(builder: (context, userData, child) {
       return userData.isLoading
@@ -29,7 +32,7 @@ class UserList extends StatelessWidget {
                   //
                   //Gesture detector
                   onTap: () {
-                    // service.replaceTo('/detailedChat');
+                    _navigation.replaceWithChatDetailsView();
                   },
                   //
                   //Profile picture

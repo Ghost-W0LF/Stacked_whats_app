@@ -4,7 +4,7 @@ import 'package:stacked_app/ui/views/home_view/model/user_data_model.dart';
 import 'package:stacked_app/ui/views/home_view/repositort/user_repository_implements.dart';
 
 class HomeViewViewModel extends BaseViewModel {
-   UserData uData = UserData(data: []);
+  UserData uData = UserData(data: []);
 
   final userRepository = UserRepositoryImplements();
   bool isLoading = false;
@@ -27,5 +27,4 @@ class HomeViewViewModel extends BaseViewModel {
       notifyListeners();
     }
   }
-
 }

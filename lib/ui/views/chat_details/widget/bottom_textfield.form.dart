@@ -8,54 +8,52 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:stacked_app/ui/views/text_reverse/text_reverse_viewmodel.dart';
 
 const bool _autoTextFieldValidation = true;
 
-const String ReverseInputValueKey = 'reverseInput';
+const String ChatBoxValueKey = 'chatBox';
 
 final Map<String, TextEditingController>
-    _TextReverseViewTextEditingControllers = {};
+    _BottomTextFieldTextEditingControllers = {};
 
-final Map<String, FocusNode> _TextReverseViewFocusNodes = {};
+final Map<String, FocusNode> _BottomTextFieldFocusNodes = {};
 
-final Map<String, String? Function(String?)?> _TextReverseViewTextValidations =
+final Map<String, String? Function(String?)?> _BottomTextFieldTextValidations =
     {
-  ReverseInputValueKey: TextReverseValidators.validateReverseText,
+  ChatBoxValueKey: null,
 };
 
-mixin $TextReverseView {
-  TextEditingController get reverseInputController =>
-      _getFormTextEditingController(ReverseInputValueKey);
+mixin $BottomTextField {
+  TextEditingController get chatBoxController =>
+      _getFormTextEditingController(ChatBoxValueKey);
 
-  FocusNode get reverseInputFocusNode =>
-      _getFormFocusNode(ReverseInputValueKey);
+  FocusNode get chatBoxFocusNode => _getFormFocusNode(ChatBoxValueKey);
 
   TextEditingController _getFormTextEditingController(
     String key, {
     String? initialValue,
   }) {
-    if (_TextReverseViewTextEditingControllers.containsKey(key)) {
-      return _TextReverseViewTextEditingControllers[key]!;
+    if (_BottomTextFieldTextEditingControllers.containsKey(key)) {
+      return _BottomTextFieldTextEditingControllers[key]!;
     }
 
-    _TextReverseViewTextEditingControllers[key] =
+    _BottomTextFieldTextEditingControllers[key] =
         TextEditingController(text: initialValue);
-    return _TextReverseViewTextEditingControllers[key]!;
+    return _BottomTextFieldTextEditingControllers[key]!;
   }
 
   FocusNode _getFormFocusNode(String key) {
-    if (_TextReverseViewFocusNodes.containsKey(key)) {
-      return _TextReverseViewFocusNodes[key]!;
+    if (_BottomTextFieldFocusNodes.containsKey(key)) {
+      return _BottomTextFieldFocusNodes[key]!;
     }
-    _TextReverseViewFocusNodes[key] = FocusNode();
-    return _TextReverseViewFocusNodes[key]!;
+    _BottomTextFieldFocusNodes[key] = FocusNode();
+    return _BottomTextFieldFocusNodes[key]!;
   }
 
   /// Registers a listener on every generated controller that calls [model.setData()]
   /// with the latest textController values
   void syncFormWithViewModel(FormStateHelper model) {
-    reverseInputController.addListener(() => _updateFormData(model));
+    chatBoxController.addListener(() => _updateFormData(model));
 
     _updateFormData(model, forceValidate: _autoTextFieldValidation);
   }
@@ -67,7 +65,7 @@ mixin $TextReverseView {
     'This feature was deprecated after 3.1.0.',
   )
   void listenToFormUpdated(FormViewModel model) {
-    reverseInputController.addListener(() => _updateFormData(model));
+    chatBoxController.addListener(() => _updateFormData(model));
 
     _updateFormData(model, forceValidate: _autoTextFieldValidation);
   }
@@ -77,7 +75,7 @@ mixin $TextReverseView {
     model.setData(
       model.formValueMap
         ..addAll({
-          ReverseInputValueKey: reverseInputController.text,
+          ChatBoxValueKey: chatBoxController.text,
         }),
     );
 
@@ -95,15 +93,15 @@ mixin $TextReverseView {
   void disposeForm() {
     // The dispose function for a TextEditingController sets all listeners to null
 
-    for (var controller in _TextReverseViewTextEditingControllers.values) {
+    for (var controller in _BottomTextFieldTextEditingControllers.values) {
       controller.dispose();
     }
-    for (var focusNode in _TextReverseViewFocusNodes.values) {
+    for (var focusNode in _BottomTextFieldFocusNodes.values) {
       focusNode.dispose();
     }
 
-    _TextReverseViewTextEditingControllers.clear();
-    _TextReverseViewFocusNodes.clear();
+    _BottomTextFieldTextEditingControllers.clear();
+    _BottomTextFieldFocusNodes.clear();
   }
 }
 
@@ -119,56 +117,54 @@ extension ValueProperties on FormStateHelper {
     return !hasAnyValidationMessage;
   }
 
-  String? get reverseInputValue =>
-      this.formValueMap[ReverseInputValueKey] as String?;
+  String? get chatBoxValue => this.formValueMap[ChatBoxValueKey] as String?;
 
-  set reverseInputValue(String? value) {
+  set chatBoxValue(String? value) {
     this.setData(
-      this.formValueMap..addAll({ReverseInputValueKey: value}),
+      this.formValueMap..addAll({ChatBoxValueKey: value}),
     );
 
-    if (_TextReverseViewTextEditingControllers.containsKey(
-        ReverseInputValueKey)) {
-      _TextReverseViewTextEditingControllers[ReverseInputValueKey]?.text =
+    if (_BottomTextFieldTextEditingControllers.containsKey(ChatBoxValueKey)) {
+      _BottomTextFieldTextEditingControllers[ChatBoxValueKey]?.text =
           value ?? '';
     }
   }
 
-  bool get hasReverseInput =>
-      this.formValueMap.containsKey(ReverseInputValueKey) &&
-      (reverseInputValue?.isNotEmpty ?? false);
+  bool get hasChatBox =>
+      this.formValueMap.containsKey(ChatBoxValueKey) &&
+      (chatBoxValue?.isNotEmpty ?? false);
 
-  bool get hasReverseInputValidationMessage =>
-      this.fieldsValidationMessages[ReverseInputValueKey]?.isNotEmpty ?? false;
+  bool get hasChatBoxValidationMessage =>
+      this.fieldsValidationMessages[ChatBoxValueKey]?.isNotEmpty ?? false;
 
-  String? get reverseInputValidationMessage =>
-      this.fieldsValidationMessages[ReverseInputValueKey];
+  String? get chatBoxValidationMessage =>
+      this.fieldsValidationMessages[ChatBoxValueKey];
 }
 
 extension Methods on FormStateHelper {
-  setReverseInputValidationMessage(String? validationMessage) =>
-      this.fieldsValidationMessages[ReverseInputValueKey] = validationMessage;
+  setChatBoxValidationMessage(String? validationMessage) =>
+      this.fieldsValidationMessages[ChatBoxValueKey] = validationMessage;
 
   /// Clears text input fields on the Form
   void clearForm() {
-    reverseInputValue = '';
+    chatBoxValue = '';
   }
 
   /// Validates text input fields on the Form
   void validateForm() {
     this.setValidationMessages({
-      ReverseInputValueKey: getValidationMessage(ReverseInputValueKey),
+      ChatBoxValueKey: getValidationMessage(ChatBoxValueKey),
     });
   }
 }
 
 /// Returns the validation message for the given key
 String? getValidationMessage(String key) {
-  final validatorForKey = _TextReverseViewTextValidations[key];
+  final validatorForKey = _BottomTextFieldTextValidations[key];
   if (validatorForKey == null) return null;
 
   String? validationMessageForKey = validatorForKey(
-    _TextReverseViewTextEditingControllers[key]!.text,
+    _BottomTextFieldTextEditingControllers[key]!.text,
   );
 
   return validationMessageForKey;
@@ -177,5 +173,5 @@ String? getValidationMessage(String key) {
 /// Updates the fieldsValidationMessages on the FormViewModel
 void updateValidationData(FormStateHelper model) =>
     model.setValidationMessages({
-      ReverseInputValueKey: getValidationMessage(ReverseInputValueKey),
+      ChatBoxValueKey: getValidationMessage(ChatBoxValueKey),
     });
