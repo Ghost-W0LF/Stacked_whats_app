@@ -11,11 +11,10 @@ import 'package:flutter/material.dart' as _i6;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i5;
-import 'package:stacked_app/services/api_service.dart' as _i9;
-import 'package:stacked_app/services/login_service.dart' as _i10;
-import 'package:stacked_app/services/token_storage_service.dart' as _i12;
+import 'package:stacked_app/services/login_service.dart' as _i9;
+import 'package:stacked_app/services/token_storage_service.dart' as _i11;
 import 'package:stacked_app/ui/views/login/model/login_request_model.dart'
-    as _i11;
+    as _i10;
 import 'package:stacked_services/stacked_services.dart' as _i4;
 
 // ignore_for_file: type=lint
@@ -709,15 +708,10 @@ class MockDialogService extends _i1.Mock implements _i4.DialogService {
       );
 }
 
-/// A class which mocks [ApiService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockApiService extends _i1.Mock implements _i9.ApiService {}
-
 /// A class which mocks [LoginService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockLoginService extends _i1.Mock implements _i10.LoginService {
+class MockLoginService extends _i1.Mock implements _i9.LoginService {
   @override
   _i2.Dio get dio => (super.noSuchMethod(
         Invocation.getter(#dio),
@@ -733,7 +727,7 @@ class MockLoginService extends _i1.Mock implements _i10.LoginService {
 
   @override
   _i7.Future<_i2.Response<dynamic>> postLogin(
-          _i11.LoginRequestModel? loginRequest) =>
+          _i10.LoginRequestModel? loginRequest) =>
       (super.noSuchMethod(
         Invocation.method(
           #postLogin,
@@ -762,7 +756,7 @@ class MockLoginService extends _i1.Mock implements _i10.LoginService {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockTokenStorageService extends _i1.Mock
-    implements _i12.TokenStorageService {
+    implements _i11.TokenStorageService {
   @override
   bool get isLoggedIn => (super.noSuchMethod(
         Invocation.getter(#isLoggedIn),

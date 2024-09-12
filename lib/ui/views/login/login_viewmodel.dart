@@ -5,12 +5,18 @@ import 'package:stacked_app/services/token_storage_service.dart';
 import 'package:stacked_app/ui/views/login/login_view.form.dart';
 import 'package:stacked_app/ui/views/login/model/login_request_model.dart';
 import 'package:stacked_app/ui/views/login/repository/login_repository_implement.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class LoginViewModel extends FormViewModel
     with $LoginView
     implements BaseViewModel {
-  final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   LoginRepositoryImplement loginRepo = LoginRepositoryImplement();
+  final snackBar = locator<SnackbarService>();
+  Validation() {
+    if (hasUsernameValidationMessage) {
+      return usernameValidationMessage;
+    }
+  }
 
   //login function to login
   void requestLogin() async {
@@ -26,21 +32,34 @@ class LoginViewModel extends FormViewModel
     final tokenStorage = locator.get<TokenStorageService>();
     String? token = await tokenStorage.readToken();
 
-    const Duration(milliseconds: 800);
-    if (token != null) {
-      passwordController.clear();
+    if (!hasUsernameValidationMessage && !hasPasswordValidationMessage) {
+      if (token != null) {
+        passwordController.clear();
 
-      debugPrint('Login successful, token: $token');
-      dispose();
+        debugPrint('Login successful, token: $token');
+        dispose();
+      }
+      if (token == null) {
+        passwordController.clear();
+
+        //
+        // Show an error message
+        debugPrint('Login failed: $token');
+      } else {
+        snackBar.showSnackbar(
+            message: 'Invalid Email or Password',
+            duration: const Duration(seconds: 1));
+      }
+      snackBar.showSnackbar(
+          message: 'Processing Data', duration: const Duration(seconds: 1));
+    } else {
+      snackBar.showSnackbar(
+          message: 'Incorrect Email or Password Field',
+          duration: const Duration(seconds: 2));
     }
-    if (token == null) {
-      passwordController.clear();
 
-      //
-      // Show an error message
-      debugPrint('Login failed: $token');
-    } else {}
-
-    return null;
+    snackBar.showSnackbar(
+        message: 'Invalid Email or Password',
+        duration: const Duration(seconds: 2));
   }
 }

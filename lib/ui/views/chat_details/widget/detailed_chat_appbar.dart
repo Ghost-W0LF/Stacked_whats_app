@@ -13,7 +13,8 @@ class DetailedChatAppBar extends StatelessWidget
     this.name,
   });
 
-  final String? avatar;final String? name;
+  final String? avatar;
+  final String? name;
 
   final _navigation = locator.get<NavigationService>();
 
@@ -48,7 +49,7 @@ class DetailedChatAppBar extends StatelessWidget
                 //
                 //First Name
                 child: Text(
-                 name?? "First Name",
+                  name ?? "First Name",
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ),

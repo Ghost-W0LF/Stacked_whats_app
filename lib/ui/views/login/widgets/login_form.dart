@@ -8,12 +8,7 @@ import 'package:stacked_app/widgets/cust_text_formfield.dart';
 class LoginForm extends StackedView<LoginViewModel> with $LoginView {
   const LoginForm({
     super.key,
-    // required GlobalKey<FormState> loginFormKey,
-    // required this.loginViewModel,
-  }); /* : _loginFormKey = loginFormKey; */
-
-  // final GlobalKey<FormState> _loginFormKey;
-  // final LoginViewModel loginViewModel;
+  });
 
   @override
   Widget builder(

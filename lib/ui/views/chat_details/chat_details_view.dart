@@ -11,8 +11,8 @@ class ChatDetailsView extends StackedView<ChatDetailsViewModel>
     with $BottomTextField {
   ChatDetailsView({Key? key, this.avatar, this.name}) : super(key: key);
 
-  String? avatar;
-  String? name;
+  final String? avatar;
+  final String? name;
 
   @override
   Widget builder(

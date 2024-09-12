@@ -10,6 +10,7 @@ import 'package:stacked_services/stacked_services.dart';
 
 class LoginRepositoryImplement implements LoginRepository {
   final tokenStorage = locator.get<TokenStorageService>();
+  final snackBar = locator.get<SnackbarService>();
   final dio = DioInstance().dio;
   final _navigation = locator.get<NavigationService>();
   final loginService = locator.get<LoginService>();
@@ -24,7 +25,9 @@ class LoginRepositoryImplement implements LoginRepository {
         tokenStorage.writeToken(token);
         _navigation.navigateToHomeViewView();
 //Snackbar
-
+        snackBar.showSnackbar(
+            message: "Processing Data",
+            duration: const Duration(milliseconds: 300));
         return token;
       } else {
         debugPrint('Login failed: ${response.statusCode}');

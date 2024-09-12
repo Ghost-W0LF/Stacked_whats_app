@@ -32,8 +32,9 @@ class UserList extends StatelessWidget {
                   //Gesture detector
                   onTap: () {
                     navigation.replaceWithChatDetailsView(
-                       
-                        avatar: userData.uData.data?[index].avatar,name:'${userData.uData.data?[index].firstName} ${userData.uData.data?[index].lastName}');
+                        avatar: userData.uData.data?[index].avatar,
+                        name:
+                            '${userData.uData.data?[index].firstName} ${userData.uData.data?[index].lastName}');
                   },
                   //
                   //Profile picture

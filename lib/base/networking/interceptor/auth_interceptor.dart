@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:stacked_app/app/app.locator.dart';
 import 'package:stacked_app/services/token_storage_service.dart';
 import 'package:stacked_app/ui/common/t_url.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class AuthInterceptor extends InterceptorsWrapper /* with SnackBarService */ {
   final tokenStorage = locator.get<TokenStorageService>();
+  final snackBar = locator.get<SnackbarService>();
 
   @override
   Future onRequest(
@@ -34,7 +36,7 @@ class AuthInterceptor extends InterceptorsWrapper /* with SnackBarService */ {
   void onError(DioException err, ErrorInterceptorHandler handler) async {
     if (err.response != null) {
       if (err.response!.statusCode == 400) {
-        // SnackBarService.showSnackBar("Invalid Email or Password");
+        snackBar.showSnackbar(message: "Invalid Email or Password");
         debugPrint('Unauthorized access ');
       }
       if (err.response!.statusCode == 204) {
