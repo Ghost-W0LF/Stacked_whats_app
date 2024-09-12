@@ -1,6 +1,5 @@
 import 'package:stacked_app/ui/bottom_sheets/notice/notice_sheet.dart';
 import 'package:stacked_app/ui/dialogs/info_alert/info_alert_dialog.dart';
-import 'package:stacked_app/ui/views/chat_details/widget/bottom_textfield.dart';
 import 'package:stacked_app/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
