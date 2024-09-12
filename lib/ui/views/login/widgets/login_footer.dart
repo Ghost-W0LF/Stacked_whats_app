@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:stacked_app/app/app.locator.dart';
+import 'package:stacked_app/app/app.router.dart';
 import 'package:stacked_app/ui/common/app_strings.dart';
+import 'package:stacked_app/ui/views/login/repository/login_repository_implement.dart';
 import 'package:stacked_app/widgets/cust_button.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class LoginFooter extends StatelessWidget {
   const LoginFooter({
@@ -9,6 +13,7 @@ class LoginFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final navigation = locator<NavigationService>();
     return Row(
       children: [
         Text(
@@ -21,10 +26,7 @@ class LoginFooter extends StatelessWidget {
           text: signup,
           isTextButton: true,
           onPressed: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(builder: (context) => const SignupView()),
-            // );
+            navigation.replaceWithSignupView();
           },
         ),
       ],

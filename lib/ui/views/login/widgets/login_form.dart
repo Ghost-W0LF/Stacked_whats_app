@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_app/ui/common/app_strings.dart';
+import 'package:stacked_app/ui/common/validator/text_form_validator.dart';
 import 'package:stacked_app/ui/views/login/login_view.form.dart';
 import 'package:stacked_app/ui/views/login/login_viewmodel.dart';
 import 'package:stacked_app/widgets/cust_text_formfield.dart';
@@ -24,6 +25,7 @@ class LoginForm extends StackedView<LoginViewModel> with $LoginView {
           controller: usernameController,
           hintText: email,
           iconData: Icons.email,
+          validator: TextFormValidators.emailValidators,
         ),
         if (viewModel.hasUsernameValidationMessage) ...[
           Text(

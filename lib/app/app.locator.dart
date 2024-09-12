@@ -13,6 +13,7 @@ import 'package:stacked_services/src/snackbar/snackbar_service.dart';
 import 'package:stacked_shared/stacked_shared.dart';
 
 import '../services/login_service.dart';
+import '../services/signup_service.dart';
 import '../services/token_storage_service.dart';
 import '../services/user_data_service.dart';
 
@@ -34,4 +35,5 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => TokenStorageService());
   locator.registerLazySingleton(() => UserDataService());
   locator.registerLazySingleton(() => SnackbarService());
+  locator.registerLazySingleton(() => SignupService());
 }

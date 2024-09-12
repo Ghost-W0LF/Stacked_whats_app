@@ -9,6 +9,8 @@ import 'package:stacked_app/services/token_storage_service.dart';
 import 'package:stacked_app/ui/views/home_view/home_view_view.dart';
 import 'package:stacked_app/services/user_data_service.dart';
 import 'package:stacked_app/ui/views/chat_details/chat_details_view.dart';
+import 'package:stacked_app/ui/views/signup/signup_view.dart';
+import 'package:stacked_app/services/signup_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -18,6 +20,7 @@ import 'package:stacked_app/ui/views/chat_details/chat_details_view.dart';
     MaterialRoute(page: HomeViewView),
     MaterialRoute(page: ChatDetailsView),
     // MaterialRoute(page: ButtomTextField),
+    MaterialRoute(page: SignupView),
 // @stacked-route
   ],
   dependencies: [
@@ -28,6 +31,7 @@ import 'package:stacked_app/ui/views/chat_details/chat_details_view.dart';
     LazySingleton(classType: TokenStorageService),
     LazySingleton(classType: UserDataService),
     LazySingleton(classType: SnackbarService),
+    LazySingleton(classType: SignupService),
 // @stacked-service
   ],
   bottomsheets: [

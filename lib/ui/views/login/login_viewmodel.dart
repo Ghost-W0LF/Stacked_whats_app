@@ -12,11 +12,6 @@ class LoginViewModel extends FormViewModel
     implements BaseViewModel {
   LoginRepositoryImplement loginRepo = LoginRepositoryImplement();
   final snackBar = locator<SnackbarService>();
-  Validation() {
-    if (hasUsernameValidationMessage) {
-      return usernameValidationMessage;
-    }
-  }
 
   //login function to login
   void requestLogin() async {
@@ -51,7 +46,8 @@ class LoginViewModel extends FormViewModel
             duration: const Duration(seconds: 1));
       }
       snackBar.showSnackbar(
-          message: 'Processing Data', duration: const Duration(seconds: 1));
+          message: 'Processing Data',
+          duration: const Duration(milliseconds: 500));
     } else {
       snackBar.showSnackbar(
           message: 'Incorrect Email or Password Field',

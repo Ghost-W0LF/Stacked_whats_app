@@ -9,7 +9,7 @@ class SignupRequestModel {
   final String userName;
   Map<String, dynamic> toJson() {
     return {
-      'fullNamesign': email,
+      'full_name': userName,
       'password': password,
       'email': email,
     };

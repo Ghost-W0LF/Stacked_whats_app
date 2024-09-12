@@ -12,6 +12,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i5;
 import 'package:stacked_app/services/login_service.dart' as _i9;
+import 'package:stacked_app/services/signup_service.dart' as _i12;
 import 'package:stacked_app/services/token_storage_service.dart' as _i11;
 import 'package:stacked_app/ui/views/login/model/login_request_model.dart'
     as _i10;
@@ -816,3 +817,8 @@ class MockTokenStorageService extends _i1.Mock
         returnValueForMissingStub: _i7.Future<void>.value(),
       ) as _i7.Future<void>);
 }
+
+/// A class which mocks [SignupService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockSignupService extends _i1.Mock implements _i12.SignupService {}
