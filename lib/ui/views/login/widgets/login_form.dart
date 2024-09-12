@@ -10,7 +10,7 @@ class LoginForm extends StackedView<LoginViewModel> with $LoginView {
     super.key,
     // required GlobalKey<FormState> loginFormKey,
     // required this.loginViewModel,
-  }); //: _loginFormKey = loginFormKey;
+  }); /* : _loginFormKey = loginFormKey; */
 
   // final GlobalKey<FormState> _loginFormKey;
   // final LoginViewModel loginViewModel;
@@ -19,7 +19,7 @@ class LoginForm extends StackedView<LoginViewModel> with $LoginView {
   Widget builder(
       BuildContext context, LoginViewModel viewModel, Widget? child) {
     return Form(
-        // key: _loginFormKey,
+        //  key: _loginFormKey,
         child: Column(
       children: [
         //

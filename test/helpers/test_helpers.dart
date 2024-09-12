@@ -4,6 +4,7 @@ import 'package:stacked_app/app/app.locator.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_app/services/api_service.dart';
 import 'package:stacked_app/services/login_service.dart';
+import 'package:stacked_app/services/token_storage_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -14,6 +15,8 @@ import 'test_helpers.mocks.dart';
   MockSpec<DialogService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<ApiService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<LoginService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<TokenStorageService>(onMissingStub: OnMissingStub.returnDefault),
+
 // @stacked-mock-spec
 ])
 void registerServices() {
@@ -22,6 +25,7 @@ void registerServices() {
   getAndRegisterDialogService();
   getAndRegisterApiService();
   getAndRegisterLoginService();
+  getAndRegisterTokenStorageService();
 // @stacked-mock-register
 }
 
@@ -88,6 +92,15 @@ MockLoginService getAndRegisterLoginService() {
   locator.registerSingleton<LoginService>(service);
   return service;
 }
+
+MockTokenStorageService getAndRegisterTokenStorageService() {
+  _removeRegistrationIfExists<TokenStorageService>();
+  final service = MockTokenStorageService();
+  locator.registerSingleton<TokenStorageService>(service);
+  return service;
+}
+
+
 // @stacked-mock-create
 
 void _removeRegistrationIfExists<T extends Object>() {
