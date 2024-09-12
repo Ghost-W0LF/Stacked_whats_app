@@ -9,13 +9,18 @@ class DetailedChatAppBar extends StatelessWidget
     implements PreferredSizeWidget {
   DetailedChatAppBar({
     super.key,
+    this.avatar,
+    this.name,
   });
+
+  final String? avatar;final String? name;
 
   final _navigation = locator.get<NavigationService>();
 
   @override
   Widget build(BuildContext context) {
-    // final userData = context.read<HomeViewViewModel>();
+    // final homeViewModel = context.read<HomeViewViewModel>();
+    // final homeViewModel = locator.get<HomeViewViewModel>();
     return AppBar(
       backgroundColor: Colors.grey,
       //back button
@@ -30,8 +35,7 @@ class DetailedChatAppBar extends StatelessWidget
         children: [
           //Avatar Image
           CircleAvatar(
-            backgroundImage: NetworkImage(
-                /*  userData.uData.data?[0].avatar ??  */ TImage.networkImage),
+            backgroundImage: NetworkImage(avatar ?? TImage.networkImage),
           ),
           const SizedBox(
             width: 5,
@@ -44,7 +48,7 @@ class DetailedChatAppBar extends StatelessWidget
                 //
                 //First Name
                 child: Text(
-                  /*   "${userData.uData.data?[0].firstName}", */ "First Name",
+                 name?? "First Name",
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ),

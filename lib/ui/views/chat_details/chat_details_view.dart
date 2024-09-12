@@ -7,11 +7,12 @@ import 'package:stacked_app/ui/views/chat_details/widget/detailed_chat_appbar.da
 
 import 'chat_details_viewmodel.dart';
 
-
-
 class ChatDetailsView extends StackedView<ChatDetailsViewModel>
     with $BottomTextField {
-  const ChatDetailsView({Key? key}) : super(key: key);
+  ChatDetailsView({Key? key, this.avatar, this.name}) : super(key: key);
+
+  String? avatar;
+  String? name;
 
   @override
   Widget builder(
@@ -22,7 +23,10 @@ class ChatDetailsView extends StackedView<ChatDetailsViewModel>
     return Scaffold(
       //
       //AppBar
-      appBar: DetailedChatAppBar(),
+      appBar: DetailedChatAppBar(
+        avatar: avatar,
+        name: name,
+      ),
       //
       //body
       body: Stack(children: [
@@ -50,7 +54,7 @@ class ChatDetailsView extends StackedView<ChatDetailsViewModel>
 
         //
         //bottom text field
-    BottomTextField(vm: viewModel)
+        BottomTextField(vm: viewModel)
       ]),
     );
   }

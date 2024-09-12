@@ -7,12 +7,11 @@ class TAppTheme {
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     scaffoldBackgroundColor: Colors.white,
-    primaryColor:darkGrey,
+    primaryColor: darkGrey,
     brightness: Brightness.light,
     textTheme: TTextTheme.lightTextTheme,
     dividerColor: darkerGrey,
-    appBarTheme:const AppBarTheme(backgroundColor: whatsAppGreen),
-
+    appBarTheme: const AppBarTheme(backgroundColor: whatsAppGreen),
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
@@ -20,8 +19,7 @@ class TAppTheme {
     primaryColor: lightGrey,
     brightness: Brightness.dark,
     dividerColor: lightGrey,
-    appBarTheme:
-        AppBarTheme(backgroundColor:whatsAppGreen.withOpacity(0.8)),
+    appBarTheme: AppBarTheme(backgroundColor: whatsAppGreen.withOpacity(0.8)),
     textTheme: TTextTheme.darkTextTheme,
   );
 }

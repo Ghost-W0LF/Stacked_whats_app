@@ -5,7 +5,6 @@ import 'package:stacked_app/app/app.router.dart';
 import 'package:stacked_app/ui/common/app_colors.dart';
 import 'package:stacked_app/ui/common/assets/t_image.dart';
 import 'package:stacked_app/ui/views/home_view/home_view_viewmodel.dart';
-import 'package:stacked_app/ui/views/home_view/widget/home_app_bar.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class UserList extends StatelessWidget {
@@ -19,7 +18,7 @@ class UserList extends StatelessWidget {
       Provider.of<HomeViewViewModel>(context, listen: false)
           .getPostData(context);
     });
-    final _navigation = locator.get<NavigationService>();
+    final navigation = locator.get<NavigationService>();
 
     return Consumer<HomeViewViewModel>(builder: (context, userData, child) {
       return userData.isLoading
@@ -32,7 +31,9 @@ class UserList extends StatelessWidget {
                   //
                   //Gesture detector
                   onTap: () {
-                    _navigation.replaceWithChatDetailsView();
+                    navigation.replaceWithChatDetailsView(
+                       
+                        avatar: userData.uData.data?[index].avatar,name:'${userData.uData.data?[index].firstName} ${userData.uData.data?[index].lastName}');
                   },
                   //
                   //Profile picture
