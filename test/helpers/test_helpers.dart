@@ -18,7 +18,6 @@ import 'package:stacked_app/services/signup_service.dart';
 ])
 void registerServices() {
   getAndRegisterNavigationService();
-  getAndRegisterSignupService();
 // @stacked-mock-register
 }
 

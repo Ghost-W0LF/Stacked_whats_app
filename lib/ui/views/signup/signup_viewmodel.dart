@@ -12,9 +12,9 @@ class SignupViewModel extends FormViewModel with $SignupForm {
   void createAccount() {
     try {
       register.signupAuth(SignupRequestModel(
-          email: emailController.toString(),
-          password: passwordController.toString(),
-          userName: fullnameController.toString()));
+          email: emailController.text,
+          password: passwordController.text,
+          userName: fullnameController.text));
       snackBar.showSnackbar(message: "Processing Data");
     } catch (e) {
       debugPrint("The error is:- $e");

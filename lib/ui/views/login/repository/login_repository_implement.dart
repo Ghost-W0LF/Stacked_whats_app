@@ -24,10 +24,7 @@ class LoginRepositoryImplement implements LoginRepository {
         debugPrint('The token is $token');
         tokenStorage.writeToken(token);
         _navigation.navigateToHomeViewView();
-//Snackbar
-        snackBar.showSnackbar(
-            message: "Processing Data",
-            duration: const Duration(milliseconds: 300));
+
         return token;
       } else {
         debugPrint('Login failed: ${response.statusCode}');

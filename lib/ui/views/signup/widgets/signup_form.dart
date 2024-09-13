@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_app/ui/common/app_strings.dart';
 import 'package:stacked_app/ui/common/validator/text_form_validator.dart';
-import 'package:stacked_app/ui/views/signup/signup_viewmodel.dart';
 import 'package:stacked_app/ui/views/signup/widgets/signup_form.form.dart';
 import 'package:stacked_app/widgets/cust_text_formfield.dart';
 
@@ -26,7 +24,6 @@ class SignupForm extends StatelessWidget with $SignupForm {
 
   @override
   Widget build(BuildContext context) {
-    final signupViewmodel = Provider.of<SignupViewModel>(context);
     return Form(
         child: Column(
       children: [

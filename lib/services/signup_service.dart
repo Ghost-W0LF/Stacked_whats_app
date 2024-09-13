@@ -12,11 +12,11 @@ class SignupService {
   Future<Response> registerUser(SignupRequestModel signupRequestModel) async {
     try {
       return await dio.post(TUrl.signUpUrl,
-          data: jsonEncode(signupRequestModel.toJson()));
+          data: jsonEncode(signupRequestModel));
     } on DioException catch (e) {
       if (e.response != null) {
         debugPrint('Response status: ${e.response?.statusCode}');
-        debugPrint('Response data: ${e.response?.data}');
+        debugPrint('Response data: ${e.response?.data.toString()}');
       } else {
         // Something went wrong before getting a response
         debugPrint('Error sending request: ${e.message}');
