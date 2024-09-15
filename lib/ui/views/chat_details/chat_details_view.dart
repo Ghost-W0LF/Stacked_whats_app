@@ -22,6 +22,7 @@ class ChatDetailsView extends StackedView<ChatDetailsViewModel>
     return Scaffold(
       //
       //AppBar
+
       appBar: DetailedChatAppBar(
         avatar: avatar,
         name: name,
@@ -62,5 +63,5 @@ class ChatDetailsView extends StackedView<ChatDetailsViewModel>
   ChatDetailsViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-    ChatDetailsViewModel();
+      ChatDetailsViewModel();
 }
