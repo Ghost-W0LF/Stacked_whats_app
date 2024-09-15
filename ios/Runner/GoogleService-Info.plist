@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDXZia7TM678aPH_FhyTTuGwEmJ0z7gnuU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>163054285054</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.stackedApp</string>
+	<key>PROJECT_ID</key>
+	<string>stacked-app-whatsapp</string>
+	<key>STORAGE_BUCKET</key>
+	<string>stacked-app-whatsapp.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:163054285054:ios:f8f9ed297c352fad0875af</string>
+</dict>
+</plist>

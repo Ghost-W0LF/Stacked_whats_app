@@ -25,7 +25,6 @@ void registerServices() {
 // @stacked-mock-register
 }
 
-void getAndRegisterChatService() {
-}
+void getAndRegisterChatService() {}
 
 void getAndRegisterNavigationService() {}
