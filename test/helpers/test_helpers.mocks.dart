@@ -11,7 +11,7 @@ import 'package:flutter/material.dart' as _i6;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i5;
-import 'package:stacked_app/services/chat_service.dart' as _i14;
+import 'package:stacked_app/services/firebase_auth_service.dart' as _i14;
 import 'package:stacked_app/services/login_service.dart' as _i9;
 import 'package:stacked_app/services/signup_service.dart' as _i12;
 import 'package:stacked_app/services/token_storage_service.dart' as _i11;
@@ -865,68 +865,8 @@ class MockSignupService extends _i1.Mock implements _i12.SignupService {
       ) as _i7.Future<_i2.Response<dynamic>>);
 }
 
-/// A class which mocks [ChatService].
+/// A class which mocks [FirebaseAuthService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockChatService extends _i1.Mock implements _i14.ChatService {
-  @override
-  List<String> get chats => (super.noSuchMethod(
-        Invocation.getter(#chats),
-        returnValue: <String>[],
-        returnValueForMissingStub: <String>[],
-      ) as List<String>);
-
-  @override
-  int get listenersCount => (super.noSuchMethod(
-        Invocation.getter(#listenersCount),
-        returnValue: 0,
-        returnValueForMissingStub: 0,
-      ) as int);
-
-  @override
-  dynamic updateChat(_i6.TextEditingController? messageController) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #updateChat,
-          [messageController],
-        ),
-        returnValueForMissingStub: null,
-      );
-
-  @override
-  void listenToReactiveValues(List<dynamic>? reactiveValues) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #listenToReactiveValues,
-          [reactiveValues],
-        ),
-        returnValueForMissingStub: null,
-      );
-
-  @override
-  void addListener(void Function()? listener) => super.noSuchMethod(
-        Invocation.method(
-          #addListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-
-  @override
-  void removeListener(void Function()? listener) => super.noSuchMethod(
-        Invocation.method(
-          #removeListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-
-  @override
-  void notifyListeners() => super.noSuchMethod(
-        Invocation.method(
-          #notifyListeners,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
-}
+class MockFirebaseAuthService extends _i1.Mock
+    implements _i14.FirebaseAuthService {}

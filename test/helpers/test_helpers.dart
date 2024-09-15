@@ -5,7 +5,7 @@ import 'package:stacked_app/services/token_storage_service.dart';
 
 import 'package:stacked_app/services/signup_service.dart';
 
-import 'package:stacked_app/services/chat_service.dart';
+import 'package:stacked_app/services/firebase_auth_service.dart';
 
 // @stacked-import
 @GenerateMocks([], customMocks: [
@@ -16,7 +16,7 @@ import 'package:stacked_app/services/chat_service.dart';
   MockSpec<TokenStorageService>(onMissingStub: OnMissingStub.returnDefault),
 
   MockSpec<SignupService>(onMissingStub: OnMissingStub.returnDefault),
-  MockSpec<ChatService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<FirebaseAuthService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
