@@ -8,6 +8,4 @@ class ChatDetailsViewModel extends ReactiveViewModel {
     chats.add(messageController.text);
     notifyListeners();
   }
-
-
 }
