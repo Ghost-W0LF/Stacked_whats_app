@@ -11,6 +11,7 @@ import 'package:flutter/material.dart' as _i6;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i5;
+import 'package:stacked_app/services/cloud_firestore_service.dart' as _i15;
 import 'package:stacked_app/services/firebase_auth_service.dart' as _i14;
 import 'package:stacked_app/services/login_service.dart' as _i9;
 import 'package:stacked_app/services/signup_service.dart' as _i12;
@@ -869,4 +870,44 @@ class MockSignupService extends _i1.Mock implements _i12.SignupService {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockFirebaseAuthService extends _i1.Mock
-    implements _i14.FirebaseAuthService {}
+    implements _i14.FirebaseAuthService {
+  @override
+  _i7.Future<String?> register(
+    String? email,
+    String? password,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #register,
+          [
+            email,
+            password,
+          ],
+        ),
+        returnValue: _i7.Future<String?>.value(),
+        returnValueForMissingStub: _i7.Future<String?>.value(),
+      ) as _i7.Future<String?>);
+
+  @override
+  _i7.Future<String?> login(
+    String? email,
+    String? password,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #login,
+          [
+            email,
+            password,
+          ],
+        ),
+        returnValue: _i7.Future<String?>.value(),
+        returnValueForMissingStub: _i7.Future<String?>.value(),
+      ) as _i7.Future<String?>);
+}
+
+/// A class which mocks [CloudFirestoreService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockCloudFirestoreService extends _i1.Mock
+    implements _i15.CloudFirestoreService {}

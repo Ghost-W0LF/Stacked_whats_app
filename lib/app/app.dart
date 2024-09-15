@@ -12,6 +12,7 @@ import 'package:stacked_app/ui/views/chat_details/chat_details_view.dart';
 import 'package:stacked_app/ui/views/signup/signup_view.dart';
 import 'package:stacked_app/services/signup_service.dart';
 import 'package:stacked_app/services/firebase_auth_service.dart';
+import 'package:stacked_app/services/cloud_firestore_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -34,6 +35,7 @@ import 'package:stacked_app/services/firebase_auth_service.dart';
     LazySingleton(classType: SnackbarService),
     LazySingleton(classType: SignupService),
     LazySingleton(classType: FirebaseAuthService),
+    LazySingleton(classType: CloudFirestoreService),
 // @stacked-service
   ],
   bottomsheets: [

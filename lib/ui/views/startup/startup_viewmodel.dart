@@ -13,7 +13,6 @@ class StartupViewModel extends BaseViewModel {
     await Future.delayed(const Duration(milliseconds: 500));
 
     final user = FirebaseAuth.instance.currentUser;
-  
 
     user != null
         ? _navigationService.replaceWithHomeViewView()

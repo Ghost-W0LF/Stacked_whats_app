@@ -20,7 +20,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
 
       automaticallyImplyLeading: false,
-      title: const Text(homepageTitlte),
+      title: Text('${FirebaseAuth.instance.currentUser?.email}'),
       actions: [
         IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
         IconButton(
