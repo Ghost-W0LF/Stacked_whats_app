@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_app/app/app.locator.dart';
 import 'package:stacked_app/app/app.router.dart';
-import 'package:stacked_app/main.dart';
 import 'package:stacked_app/services/firebase_auth_service.dart';
-import 'package:stacked_app/services/token_storage_service.dart';
 import 'package:stacked_app/ui/views/login/login_view.form.dart';
-import 'package:stacked_app/ui/views/login/model/login_request_model.dart';
 import 'package:stacked_app/ui/views/login/repository/login_repository_implement.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -31,41 +28,14 @@ class LoginViewModel extends FormViewModel
     //
 
     final message = await firebaseLogin.login(trimmedEmail, trimmedPassword);
-    debugPrint(message);
+    debugPrint('The message is:-$message ');
+
     if (message == 'success') {
       _navigation.replaceWithHomeViewView();
-    }
-
-//
-//Token Storage
-    final tokenStorage = locator.get<TokenStorageService>();
-    String? token = await tokenStorage.readToken();
-
-    if (!hasUsernameValidationMessage && !hasPasswordValidationMessage) {
-      if (token != null) {
-        passwordController.clear();
-
-        debugPrint('Login successful, token: $token');
-        dispose();
-      }
-      if (token == null) {
-        passwordController.clear();
-
-        //
-        // Show an error message
-        debugPrint('Login failed: $token');
-      } else {
-        snackBar.showSnackbar(
-            message: 'Invalid Email or Password',
-            duration: const Duration(seconds: 1));
-      }
-      snackBar.showSnackbar(
-          message: 'Processing Data',
-          duration: const Duration(milliseconds: 500));
     } else {
       snackBar.showSnackbar(
-          message: 'Incorrect Email or Password Field',
-          duration: const Duration(seconds: 2));
+          message: '$message \n Invalid Email or Password',
+          duration: const Duration(seconds: 1));
     }
   }
 }

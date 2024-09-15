@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_app/app/app.locator.dart';
 import 'package:stacked_app/app/app.router.dart';
@@ -24,7 +25,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
         IconButton(
             onPressed: () {
-              tokenStorage.deletToken('token');
+              FirebaseAuth.instance.signOut();
               _navigation.replaceWithLoginView();
             },
             icon: const Icon(Icons.logout))

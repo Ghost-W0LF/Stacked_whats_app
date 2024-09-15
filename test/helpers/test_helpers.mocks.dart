@@ -17,7 +17,7 @@ import 'package:stacked_app/services/signup_service.dart' as _i12;
 import 'package:stacked_app/services/token_storage_service.dart' as _i11;
 import 'package:stacked_app/ui/views/login/model/login_request_model.dart'
     as _i10;
-import 'package:stacked_app/ui/views/login/model/signup_request_model.dart'
+import 'package:stacked_app/ui/views/signup/model/signup_request_model.dart'
     as _i13;
 import 'package:stacked_services/stacked_services.dart' as _i4;
 

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_app/app/app.locator.dart';
 import 'package:stacked_app/app/app.router.dart';
@@ -11,10 +11,11 @@ class StartupViewModel extends BaseViewModel {
 
   Future runStartupLogic() async {
     await Future.delayed(const Duration(milliseconds: 500));
-    final savedToken = await tokenStorage.readToken();
-    debugPrint("Saved Token:-$savedToken");
 
-    savedToken != null
+    final user = FirebaseAuth.instance.currentUser;
+  
+
+    user != null
         ? _navigationService.replaceWithHomeViewView()
         : _navigationService.replaceWithLoginView();
   }

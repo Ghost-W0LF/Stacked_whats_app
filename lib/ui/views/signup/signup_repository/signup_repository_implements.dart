@@ -3,7 +3,7 @@ import 'package:stacked_app/app/app.locator.dart';
 import 'package:stacked_app/app/app.router.dart';
 import 'package:stacked_app/base/networking/dio_instance.dart';
 import 'package:stacked_app/services/signup_service.dart';
-import 'package:stacked_app/ui/views/login/model/signup_request_model.dart';
+import 'package:stacked_app/ui/views/signup/model/signup_request_model.dart';
 import 'package:stacked_app/ui/views/signup/signup_repository/signup_repository.dart';
 import 'package:stacked_services/stacked_services.dart';
 

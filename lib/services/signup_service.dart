@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_app/base/networking/dio_instance.dart';
 import 'package:stacked_app/ui/common/t_url.dart';
-import 'package:stacked_app/ui/views/login/model/signup_request_model.dart';
+import 'package:stacked_app/ui/views/signup/model/signup_request_model.dart';
 
 class SignupService {
   final dio = DioInstance().dio;
