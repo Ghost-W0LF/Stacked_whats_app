@@ -4,7 +4,6 @@ import 'package:stacked_app/ui/common/app_colors.dart';
 import 'package:stacked_app/ui/views/chat_details/widget/bottom_textfield.dart';
 import 'package:stacked_app/ui/views/chat_details/widget/bottom_textfield.form.dart';
 import 'package:stacked_app/ui/views/chat_details/widget/detailed_chat_appbar.dart';
-
 import 'chat_details_viewmodel.dart';
 
 class ChatDetailsView extends StackedView<ChatDetailsViewModel>
@@ -54,7 +53,7 @@ class ChatDetailsView extends StackedView<ChatDetailsViewModel>
 
         //
         //bottom text field
-        BottomTextField(vm: viewModel)
+        BottomTextField(vm: viewModel).build(context)
       ]),
     );
   }
@@ -63,5 +62,5 @@ class ChatDetailsView extends StackedView<ChatDetailsViewModel>
   ChatDetailsViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      ChatDetailsViewModel();
+    ChatDetailsViewModel();
 }

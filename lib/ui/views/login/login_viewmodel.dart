@@ -53,8 +53,5 @@ class LoginViewModel extends FormViewModel
           message: 'Incorrect Email or Password Field',
           duration: const Duration(seconds: 2));
     }
-    snackBar.showSnackbar(
-        message: 'Incorrect Email or Password Field',
-        duration: const Duration(seconds: 2));
   }
 }

@@ -27,6 +27,7 @@ class LoginForm extends StackedView<LoginViewModel> with $LoginView {
           iconData: Icons.email,
           validator: TextFormValidators.emailValidators,
         ),
+
         if (viewModel.hasUsernameValidationMessage) ...[
           Text(
             viewModel.usernameValidationMessage!,
@@ -37,6 +38,7 @@ class LoginForm extends StackedView<LoginViewModel> with $LoginView {
             ),
           )
         ],
+
         const SizedBox(height: 30),
         //
         //

@@ -11,11 +11,14 @@ import 'package:flutter/material.dart' as _i6;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i5;
+import 'package:stacked_app/services/chat_service.dart' as _i14;
 import 'package:stacked_app/services/login_service.dart' as _i9;
 import 'package:stacked_app/services/signup_service.dart' as _i12;
 import 'package:stacked_app/services/token_storage_service.dart' as _i11;
 import 'package:stacked_app/ui/views/login/model/login_request_model.dart'
     as _i10;
+import 'package:stacked_app/ui/views/login/model/signup_request_model.dart'
+    as _i13;
 import 'package:stacked_services/stacked_services.dart' as _i4;
 
 // ignore_for_file: type=lint
@@ -821,4 +824,109 @@ class MockTokenStorageService extends _i1.Mock
 /// A class which mocks [SignupService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSignupService extends _i1.Mock implements _i12.SignupService {}
+class MockSignupService extends _i1.Mock implements _i12.SignupService {
+  @override
+  _i2.Dio get dio => (super.noSuchMethod(
+        Invocation.getter(#dio),
+        returnValue: _FakeDio_0(
+          this,
+          Invocation.getter(#dio),
+        ),
+        returnValueForMissingStub: _FakeDio_0(
+          this,
+          Invocation.getter(#dio),
+        ),
+      ) as _i2.Dio);
+
+  @override
+  _i7.Future<_i2.Response<dynamic>> registerUser(
+          _i13.SignupRequestModel? signupRequestModel) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #registerUser,
+          [signupRequestModel],
+        ),
+        returnValue:
+            _i7.Future<_i2.Response<dynamic>>.value(_FakeResponse_1<dynamic>(
+          this,
+          Invocation.method(
+            #registerUser,
+            [signupRequestModel],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i7.Future<_i2.Response<dynamic>>.value(_FakeResponse_1<dynamic>(
+          this,
+          Invocation.method(
+            #registerUser,
+            [signupRequestModel],
+          ),
+        )),
+      ) as _i7.Future<_i2.Response<dynamic>>);
+}
+
+/// A class which mocks [ChatService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockChatService extends _i1.Mock implements _i14.ChatService {
+  @override
+  List<String> get chats => (super.noSuchMethod(
+        Invocation.getter(#chats),
+        returnValue: <String>[],
+        returnValueForMissingStub: <String>[],
+      ) as List<String>);
+
+  @override
+  int get listenersCount => (super.noSuchMethod(
+        Invocation.getter(#listenersCount),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  dynamic updateChat(_i6.TextEditingController? messageController) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #updateChat,
+          [messageController],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void listenToReactiveValues(List<dynamic>? reactiveValues) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #listenToReactiveValues,
+          [reactiveValues],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void addListener(void Function()? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void removeListener(void Function()? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+}

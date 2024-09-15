@@ -5,6 +5,8 @@ import 'package:stacked_app/services/token_storage_service.dart';
 
 import 'package:stacked_app/services/signup_service.dart';
 
+import 'package:stacked_app/services/chat_service.dart';
+
 // @stacked-import
 @GenerateMocks([], customMocks: [
   MockSpec<NavigationService>(onMissingStub: OnMissingStub.returnDefault),
@@ -14,11 +16,16 @@ import 'package:stacked_app/services/signup_service.dart';
   MockSpec<TokenStorageService>(onMissingStub: OnMissingStub.returnDefault),
 
   MockSpec<SignupService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<ChatService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
   getAndRegisterNavigationService();
+  getAndRegisterChatService();
 // @stacked-mock-register
+}
+
+void getAndRegisterChatService() {
 }
 
 void getAndRegisterNavigationService() {}

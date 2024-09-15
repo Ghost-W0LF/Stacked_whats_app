@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stacked_app/app/app.locator.dart';
-import 'package:stacked_app/app/app.router.dart';
 import 'package:stacked_app/ui/common/app_strings.dart';
 import 'package:stacked_app/ui/common/assets/t_image.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -20,14 +19,12 @@ class DetailedChatAppBar extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    // final homeViewModel = context.read<HomeViewViewModel>();
-    // final homeViewModel = locator.get<HomeViewViewModel>();
     return AppBar(
       backgroundColor: Colors.grey,
       //back button
       leading: IconButton(
           onPressed: () {
-            _navigation.replaceWithHomeViewView();
+            _navigation.back();
           },
           icon: const Icon(Icons.arrow_back_ios)),
       //
