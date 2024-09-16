@@ -13,6 +13,8 @@ import 'package:stacked_app/ui/views/signup/signup_view.dart';
 import 'package:stacked_app/services/signup_service.dart';
 import 'package:stacked_app/services/firebase_auth_service.dart';
 import 'package:stacked_app/services/cloud_firestore_service.dart';
+import 'package:stacked_app/services/fetch_user_data_service.dart';
+import 'package:stacked_app/ui/views/home_view/repositort/user_data_repository_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -36,6 +38,8 @@ import 'package:stacked_app/services/cloud_firestore_service.dart';
     LazySingleton(classType: SignupService),
     LazySingleton(classType: FirebaseAuthService),
     LazySingleton(classType: CloudFirestoreService),
+    LazySingleton(classType: FetchUserDataService),
+    LazySingleton(classType: UserDataRepositoryService),
 // @stacked-service
   ],
   bottomsheets: [

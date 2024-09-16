@@ -22,12 +22,14 @@ class HomeViewView extends StackedView<HomeViewViewModel> {
           //
           //Appbar
           appBar: HomeAppBar(),
-          body: const TabBarView(
+          body:  TabBarView(
             children: [
-              Icon(Icons.directions_bike),
-              UserList(),
-              Icon(Icons.directions_bike),
-              Icon(Icons.directions_bike),
+              const Icon(Icons.directions_bike),
+              UserList(vm:viewModel
+
+              ),
+            const  Icon(Icons.directions_bike),
+             const Icon(Icons.directions_bike),
             ],
           ),
           //

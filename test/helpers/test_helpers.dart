@@ -9,6 +9,10 @@ import 'package:stacked_app/services/firebase_auth_service.dart';
 
 import 'package:stacked_app/services/cloud_firestore_service.dart';
 
+import 'package:stacked_app/services/fetch_user_data_service.dart';
+
+import 'package:stacked_app/ui/views/home_view/repositort/user_data_repository_service.dart';
+
 // @stacked-import
 @GenerateMocks([], customMocks: [
   MockSpec<NavigationService>(onMissingStub: OnMissingStub.returnDefault),
@@ -20,6 +24,9 @@ import 'package:stacked_app/services/cloud_firestore_service.dart';
   MockSpec<SignupService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<FirebaseAuthService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<CloudFirestoreService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<FetchUserDataService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<UserDataRepositoryService>(
+      onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {

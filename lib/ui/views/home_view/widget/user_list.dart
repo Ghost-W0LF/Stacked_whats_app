@@ -8,23 +8,24 @@ import 'package:stacked_app/ui/views/home_view/home_view_viewmodel.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class UserList extends StatelessWidget {
-  const UserList({super.key});
+  const UserList({super.key, this.vm});
+  final HomeViewViewModel? vm;
 
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       //passing in the function (a callback) we wan to execute after the current frame finish rendering
 
-      Provider.of<HomeViewViewModel>(context, listen: false)
-          .getPostData(context);
+      Provider.of<HomeViewViewModel>(context, listen: false).getUserData();
     });
+
     final navigation = locator.get<NavigationService>();
 
     return Consumer<HomeViewViewModel>(builder: (context, userData, child) {
       return userData.isLoading
           ? const CircularProgressIndicator()
           : ListView.builder(
-              itemCount: userData.uData.data?.length,
+              itemCount: userData.userList?.length,
               itemBuilder: (_, index) {
                 return ListTile(
                   //
@@ -32,21 +33,20 @@ class UserList extends StatelessWidget {
                   //Gesture detector
                   onTap: () {
                     navigation.navigateToChatDetailsView(
-                        avatar: userData.uData.data?[index].avatar,
-                        name:
-                            '${userData.uData.data?[index].firstName} ${userData.uData.data?[index].lastName}');
+                        avatar: TImage.networkImage,
+                        name: '${userData.userList?[index].name}  ');
                   },
                   //
                   //Profile picture
-                  leading: CircleAvatar(
+                  leading: const CircleAvatar(
                     backgroundImage: NetworkImage(
-                        userData.uData.data?[index].avatar ??
-                            TImage.networkImage),
+                        /* userData.uData.data?[index].avatar ?? */
+                        TImage.networkImage),
                   ),
                   //
                   //UserName and message
                   title: Text(
-                    userData.uData.data?[index].email ?? "no data",
+                    userData.userList?[index].name ?? "no data",
                     style: Theme.of(context).textTheme.headlineSmall,
                     overflow: TextOverflow.ellipsis,
                   ),

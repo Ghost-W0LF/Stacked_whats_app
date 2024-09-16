@@ -7,10 +7,9 @@ class CloudFirestoreService {
   void addData(String username, String email, String password) {
     final users = <String, dynamic>{
       "name": username,
-       "uid":FirebaseAuth.instance.currentUser?.uid,
+      "uid": FirebaseAuth.instance.currentUser?.uid,
       "email": email,
       "password": password,
-     
     };
     db
         .collection("users")
