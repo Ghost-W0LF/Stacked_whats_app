@@ -8,12 +8,12 @@
 import 'package:flutter/material.dart' as _i7;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_app/ui/views/chat_details/chat_details_view.dart'
+import 'package:stacked_app/views/chat_details/chat_details_view.dart'
     as _i5;
-import 'package:stacked_app/ui/views/home_view/home_view_view.dart' as _i4;
-import 'package:stacked_app/ui/views/login/login_view.dart' as _i3;
-import 'package:stacked_app/ui/views/signup/signup_view.dart' as _i6;
-import 'package:stacked_app/ui/views/startup/startup_view.dart' as _i2;
+import 'package:stacked_app/views/home_view/home_view_view.dart' as _i4;
+import 'package:stacked_app/views/login/login_view.dart' as _i3;
+import 'package:stacked_app/views/signup/signup_view.dart' as _i6;
+import 'package:stacked_app/views/startup/startup_view.dart' as _i2;
 import 'package:stacked_services/stacked_services.dart' as _i8;
 
 class Routes {
@@ -85,7 +85,10 @@ class StackedRouter extends _i1.RouterBase {
       );
       return _i7.MaterialPageRoute<dynamic>(
         builder: (context) => _i5.ChatDetailsView(
-            key: args.key, avatar: args.avatar, name: args.name),
+            key: args.key,
+            avatar: args.avatar,
+            name: args.name,
+            reciversId: args.reciversId),
         settings: data,
       );
     },
@@ -109,6 +112,7 @@ class ChatDetailsViewArguments {
     this.key,
     this.avatar,
     this.name,
+    this.reciversId,
   });
 
   final _i7.Key? key;
@@ -117,20 +121,25 @@ class ChatDetailsViewArguments {
 
   final String? name;
 
+  final String? reciversId;
+
   @override
   String toString() {
-    return '{"key": "$key", "avatar": "$avatar", "name": "$name"}';
+    return '{"key": "$key", "avatar": "$avatar", "name": "$name", "reciversId": "$reciversId"}';
   }
 
   @override
   bool operator ==(covariant ChatDetailsViewArguments other) {
     if (identical(this, other)) return true;
-    return other.key == key && other.avatar == avatar && other.name == name;
+    return other.key == key &&
+        other.avatar == avatar &&
+        other.name == name &&
+        other.reciversId == reciversId;
   }
 
   @override
   int get hashCode {
-    return key.hashCode ^ avatar.hashCode ^ name.hashCode;
+    return key.hashCode ^ avatar.hashCode ^ name.hashCode ^ reciversId.hashCode;
   }
 }
 
@@ -181,6 +190,7 @@ extension NavigatorStateExtension on _i8.NavigationService {
     _i7.Key? key,
     String? avatar,
     String? name,
+    String? reciversId,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -188,8 +198,8 @@ extension NavigatorStateExtension on _i8.NavigationService {
         transition,
   }) async {
     return navigateTo<dynamic>(Routes.chatDetailsView,
-        arguments:
-            ChatDetailsViewArguments(key: key, avatar: avatar, name: name),
+        arguments: ChatDetailsViewArguments(
+            key: key, avatar: avatar, name: name, reciversId: reciversId),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -256,6 +266,7 @@ extension NavigatorStateExtension on _i8.NavigationService {
     _i7.Key? key,
     String? avatar,
     String? name,
+    String? reciversId,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -263,8 +274,8 @@ extension NavigatorStateExtension on _i8.NavigationService {
         transition,
   }) async {
     return replaceWith<dynamic>(Routes.chatDetailsView,
-        arguments:
-            ChatDetailsViewArguments(key: key, avatar: avatar, name: name),
+        arguments: ChatDetailsViewArguments(
+            key: key, avatar: avatar, name: name, reciversId: reciversId),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

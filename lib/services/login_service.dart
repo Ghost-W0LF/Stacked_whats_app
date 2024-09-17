@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_app/base/networking/dio_instance.dart';
 import 'package:stacked_app/ui/common/t_url.dart';
-import 'package:stacked_app/ui/views/login/model/login_request_model.dart';
+import 'package:stacked_app/views/login/model/login_request_model.dart';
 
 class LoginService {
   final dio = DioInstance().dio;

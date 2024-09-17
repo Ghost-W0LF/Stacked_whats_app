@@ -11,7 +11,11 @@ import 'package:stacked_app/services/cloud_firestore_service.dart';
 
 import 'package:stacked_app/services/fetch_user_data_service.dart';
 
-import 'package:stacked_app/ui/views/home_view/repositort/user_data_repository_service.dart';
+import 'package:stacked_app/views/home_view/repositort/user_data_repository_service.dart';
+
+import 'package:stacked_app/views/chat_details/service/chat_service.dart';
+
+import 'package:stacked_app/views/chat_details/Repository/chat_repository_service.dart';
 
 // @stacked-import
 @GenerateMocks([], customMocks: [
@@ -27,11 +31,15 @@ import 'package:stacked_app/ui/views/home_view/repositort/user_data_repository_s
   MockSpec<FetchUserDataService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<UserDataRepositoryService>(
       onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<ChatService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<ChatRepositoryService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
   getAndRegisterNavigationService();
   getAndRegisterChatService();
+  getAndRegisterChatService();
+  getAndRegisterChatRepositoryService();
 // @stacked-mock-register
 }
 

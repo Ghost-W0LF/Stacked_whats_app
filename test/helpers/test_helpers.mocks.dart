@@ -12,16 +12,22 @@ import 'package:flutter/material.dart' as _i7;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i6;
+import 'package:stacked_app/views/chat_details/Repository/chat_repository_service.dart' as _i21;
 import 'package:stacked_app/services/cloud_firestore_service.dart' as _i16;
 import 'package:stacked_app/services/fetch_user_data_service.dart' as _i17;
 import 'package:stacked_app/services/firebase_auth_service.dart' as _i15;
 import 'package:stacked_app/services/login_service.dart' as _i10;
 import 'package:stacked_app/services/signup_service.dart' as _i13;
 import 'package:stacked_app/services/token_storage_service.dart' as _i12;
-import 'package:stacked_app/ui/views/home_view/repositort/user_data_repository_service.dart' as _i18;
-import 'package:stacked_app/ui/views/login/model/login_request_model.dart'
+import 'package:stacked_app/views/chat_details/service/chat_service.dart'
+    as _i20;
+import 'package:stacked_app/views/home_view/model/firebse_user_model.dart'
+    as _i19;
+import 'package:stacked_app/views/home_view/repositort/user_data_repository_service.dart'
+    as _i18;
+import 'package:stacked_app/views/login/model/login_request_model.dart'
     as _i11;
-import 'package:stacked_app/ui/views/signup/model/signup_request_model.dart'
+import 'package:stacked_app/views/signup/model/signup_request_model.dart'
     as _i14;
 import 'package:stacked_services/stacked_services.dart' as _i5;
 
@@ -980,4 +986,72 @@ class MockFetchUserDataService extends _i1.Mock
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockUserDataRepositoryService extends _i1.Mock
-    implements _i18.UserDataRepositoryService {}
+    implements _i18.UserDataRepositoryService {
+  @override
+  List<_i19.FirebseUserModel> get userList => (super.noSuchMethod(
+        Invocation.getter(#userList),
+        returnValue: <_i19.FirebseUserModel>[],
+        returnValueForMissingStub: <_i19.FirebseUserModel>[],
+      ) as List<_i19.FirebseUserModel>);
+
+  @override
+  set userList(List<_i19.FirebseUserModel>? _userList) => super.noSuchMethod(
+        Invocation.setter(
+          #userList,
+          _userList,
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  _i8.Future<List<_i19.FirebseUserModel>?> readUserData() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #readUserData,
+          [],
+        ),
+        returnValue: _i8.Future<List<_i19.FirebseUserModel>?>.value(),
+        returnValueForMissingStub:
+            _i8.Future<List<_i19.FirebseUserModel>?>.value(),
+      ) as _i8.Future<List<_i19.FirebseUserModel>?>);
+}
+
+/// A class which mocks [ChatService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockChatService extends _i1.Mock implements _i20.ChatService {
+  @override
+  _i4.FirebaseFirestore get db => (super.noSuchMethod(
+        Invocation.getter(#db),
+        returnValue: _FakeFirebaseFirestore_3(
+          this,
+          Invocation.getter(#db),
+        ),
+        returnValueForMissingStub: _FakeFirebaseFirestore_3(
+          this,
+          Invocation.getter(#db),
+        ),
+      ) as _i4.FirebaseFirestore);
+
+  @override
+  void addMessage(
+    String? chatMessage,
+    String? receiverId,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addMessage,
+          [
+            chatMessage,
+            receiverId,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
+}
+
+/// A class which mocks [ChatRepositoryService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockChatRepositoryService extends _i1.Mock
+    implements _i21.ChatRepositoryService {}
