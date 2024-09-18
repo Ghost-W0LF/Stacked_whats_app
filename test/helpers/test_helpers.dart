@@ -17,6 +17,8 @@ import 'package:stacked_app/views/chat_details/service/chat_service.dart';
 
 import 'package:stacked_app/views/chat_details/Repository/chat_repository_service.dart';
 
+import 'package:stacked_app/views/chat_details/Repository/get_recived_chat_service.dart';
+
 // @stacked-import
 @GenerateMocks([], customMocks: [
   MockSpec<NavigationService>(onMissingStub: OnMissingStub.returnDefault),
@@ -33,13 +35,13 @@ import 'package:stacked_app/views/chat_details/Repository/chat_repository_servic
       onMissingStub: OnMissingStub.returnDefault),
   MockSpec<ChatService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<ChatRepositoryService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<GetRecivedChatService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
   getAndRegisterNavigationService();
   getAndRegisterChatService();
   getAndRegisterChatService();
-  getAndRegisterChatRepositoryService();
 // @stacked-mock-register
 }
 

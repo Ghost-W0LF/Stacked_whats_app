@@ -22,7 +22,6 @@ class UserDataRepositoryService implements UserRepository {
             uid: doc['uid'],
             password: doc['password']));
       }
-      debugPrint("User list length after fetching: ${userList.length}");
     } catch (e) {
       debugPrint("Error fetching users: $e");
     }

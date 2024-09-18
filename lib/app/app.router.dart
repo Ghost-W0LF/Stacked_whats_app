@@ -8,8 +8,7 @@
 import 'package:flutter/material.dart' as _i7;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_app/views/chat_details/chat_details_view.dart'
-    as _i5;
+import 'package:stacked_app/views/chat_details/chat_details_view.dart' as _i5;
 import 'package:stacked_app/views/home_view/home_view_view.dart' as _i4;
 import 'package:stacked_app/views/login/login_view.dart' as _i3;
 import 'package:stacked_app/views/signup/signup_view.dart' as _i6;
@@ -80,9 +79,7 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i5.ChatDetailsView: (data) {
-      final args = data.getArgs<ChatDetailsViewArguments>(
-        orElse: () => const ChatDetailsViewArguments(),
-      );
+      final args = data.getArgs<ChatDetailsViewArguments>(nullOk: false);
       return _i7.MaterialPageRoute<dynamic>(
         builder: (context) => _i5.ChatDetailsView(
             key: args.key,
@@ -112,7 +109,7 @@ class ChatDetailsViewArguments {
     this.key,
     this.avatar,
     this.name,
-    this.reciversId,
+    required this.reciversId,
   });
 
   final _i7.Key? key;
@@ -121,7 +118,7 @@ class ChatDetailsViewArguments {
 
   final String? name;
 
-  final String? reciversId;
+  final String reciversId;
 
   @override
   String toString() {
@@ -190,7 +187,7 @@ extension NavigatorStateExtension on _i8.NavigationService {
     _i7.Key? key,
     String? avatar,
     String? name,
-    String? reciversId,
+    required String reciversId,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -266,7 +263,7 @@ extension NavigatorStateExtension on _i8.NavigationService {
     _i7.Key? key,
     String? avatar,
     String? name,
-    String? reciversId,
+    required String reciversId,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,

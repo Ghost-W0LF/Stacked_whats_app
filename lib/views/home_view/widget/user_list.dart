@@ -34,10 +34,8 @@ class UserList extends StatelessWidget {
                   onTap: () {
                     navigation.navigateToChatDetailsView(
                         avatar: TImage.networkImage,
-                        reciversId: '${userData.userList?[index].uid}  ',
+                        reciversId: '${userData.userList?[index].uid}',
                         name: '${userData.userList?[index].name}  ');
-
-                    debugPrint('${userData.userList?[index].uid}');
                   },
                   //
                   //Profile picture

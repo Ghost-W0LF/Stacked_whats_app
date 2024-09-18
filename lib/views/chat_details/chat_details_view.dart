@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_app/ui/common/app_colors.dart';
-import 'package:stacked_app/views/chat_details/widget/bottom_textfield.dart';
 import 'package:stacked_app/views/chat_details/widget/bottom_textfield.form.dart';
 import 'package:stacked_app/views/chat_details/widget/detailed_chat_appbar.dart';
 import 'chat_details_viewmodel.dart';
 
 class ChatDetailsView extends StackedView<ChatDetailsViewModel>
     with $BottomTextfield {
-  ChatDetailsView({Key? key, this.avatar, this.name, this.reciversId})
+  ChatDetailsView({Key? key, this.avatar, this.name, required this.reciversId})
       : super(key: key);
 
   final String? avatar;
   final String? name;
-  final String? reciversId;
+  final String reciversId;
 
   @override
   Widget builder(
@@ -27,7 +26,10 @@ class ChatDetailsView extends StackedView<ChatDetailsViewModel>
 
       Provider.of<ChatDetailsViewModel>(context, listen: false).getChats();
     });
-    final messageList = context.watch<ChatDetailsViewModel>();
+
+    final totalMessage = context.watch<ChatDetailsViewModel>().totalMessage;
+    debugPrint('Total message${totalMessage.length.toString()}');
+
     return Scaffold(
       //
       //AppBar
@@ -43,27 +45,66 @@ class ChatDetailsView extends StackedView<ChatDetailsViewModel>
             padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
             child: ListView.builder(
                 shrinkWrap: false,
-                itemCount: viewModel.messagesList.length,
+                //lenght of the message
+                itemCount: totalMessage.length,
                 itemBuilder: (_, index) {
+                  final isSender =
+                      context.watch<ChatDetailsViewModel>().checkSender(index);
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5.0),
-                    child: Text(
-                      messageList.messagesList[index].message.toString(),
+                    child:
+                        //message We recived
+                        Text(
+                      totalMessage[index].message.toString(),
                       style: Theme.of(context)
                           .textTheme
                           .headlineSmall
-                          ?.copyWith(backgroundColor: whatsAppGreen),
-                      textAlign: TextAlign.right,
+                          ?.copyWith(
+                              backgroundColor: isSender ? grey : whatsAppGreen),
+                      textAlign: isSender ? TextAlign.start : TextAlign.right,
                     ),
                   );
                 })),
 
         //
         //bottom text field
-        BottomTextfield(vm: viewModel)
+        Positioned(
+            bottom: 30,
+            child: Container(
+              height: 55,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  color: Colors.grey.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(20)),
+              child: Row(
+                children: [
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+                  Expanded(
+                      child: Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          controller: chatBoxController,
+                        ),
+                      ),
+                      IconButton(
+                          onPressed: () {
+                            viewModel.updateChat();
+                            chatBoxController.clear();
+                          },
+                          icon: const Icon(Icons.send))
+                    ],
+                  )),
+                  IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.photo_camera)),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.mic)),
+                ],
+              ),
+            ))
       ]),
     );
   }
+  
 
   @override
   ChatDetailsViewModel viewModelBuilder(

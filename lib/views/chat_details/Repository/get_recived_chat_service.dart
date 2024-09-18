@@ -1,41 +1,41 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:stacked/stacked.dart';
 import 'package:stacked_app/views/chat_details/model/chat_details_model.dart';
 
-class ChatRepositoryService extends BaseViewModel {
+class GetRecivedChatService {
   final db = FirebaseFirestore.instance;
-  List<ChatDetailsModel> messagesListSent = [];
-  bool isLoading = true;
 
   // Method to retrieve chat messages between sender and receiver
-  Future<List<ChatDetailsModel>> getMessage(String receiverId) async {
-    messagesListSent.clear();
+  Future<List<ChatDetailsModel>> getRecivedMessage(String receiverId) async {
+    List<ChatDetailsModel> messagesListRecived = [];
+
     try {
-      isLoading = true;
+      // Get the current user's ID (senderId)
+      final String senderId = FirebaseAuth.instance.currentUser!.uid;
+
       // Reference to the Conversations subcollection (for sender -> receiver)
       final messagesSnapshot = await db
           .collection("Chats")
+          .doc(receiverId)
+          .collection(senderId)
           .orderBy("timestamp", descending: false) // Order by timestamp
           .get();
 
       // Loop through each document in the snapshot and add the message data to the list
       for (var doc in messagesSnapshot.docs) {
-        messagesListSent.add(ChatDetailsModel(
+        messagesListRecived.add(ChatDetailsModel(
             message: doc['message'],
-            reciverID: doc['receiverId'],
             senderID: doc['senderId'],
+            reciverID: doc['receiverId'],
             timeStamp: doc['timestamp']));
       }
 
-      debugPrint("Retrieved ${messagesListSent.length} messages.");
+      debugPrint("Retrieved sent ${messagesListRecived.length} messages.");
     } catch (e) {
       debugPrint("Error sent retrieving messages: $e");
-    } finally {
-      isLoading = false;
-      notifyListeners();
     }
 
-    return messagesListSent;
+    return messagesListRecived;
   }
 }

@@ -17,6 +17,7 @@ import 'package:stacked_app/services/fetch_user_data_service.dart';
 import 'package:stacked_app/views/home_view/repositort/user_data_repository_service.dart';
 import 'package:stacked_app/views/chat_details/service/chat_service.dart';
 import 'package:stacked_app/views/chat_details/Repository/chat_repository_service.dart';
+import 'package:stacked_app/views/chat_details/Repository/get_recived_chat_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -44,6 +45,7 @@ import 'package:stacked_app/views/chat_details/Repository/chat_repository_servic
     LazySingleton(classType: UserDataRepositoryService),
     LazySingleton(classType: ChatService),
     LazySingleton(classType: ChatRepositoryService),
+    LazySingleton(classType: GetRecivedChatService),
 // @stacked-service
   ],
   bottomsheets: [
