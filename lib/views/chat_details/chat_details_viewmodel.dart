@@ -7,7 +7,7 @@ import 'package:stacked_app/views/chat_details/model/chat_details_model.dart';
 import 'package:stacked_app/views/chat_details/service/chat_service.dart';
 import 'package:stacked_app/views/chat_details/widget/bottom_textfield.form.dart';
 
-class ChatDetailsViewModel extends ReactiveViewModel with $BottomTextfield {
+class ChatDetailsViewModel extends BaseViewModel with $BottomTextfield {
   ChatDetailsViewModel({required this.reciverID});
 
   final String reciverID;
@@ -30,7 +30,7 @@ class ChatDetailsViewModel extends ReactiveViewModel with $BottomTextfield {
 //To rebuilt ui
   void updateChat() {
     chatService.addMessage(chatBoxController.text, reciverID);
-    getChats();
+    rebuildUi();
     notifyListeners();
   }
 

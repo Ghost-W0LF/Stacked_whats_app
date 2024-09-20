@@ -8,7 +8,7 @@ import 'package:stacked_app/widgets/cust_button.dart';
 import 'signup_viewmodel.dart';
 
 class SignupView extends StackedView<SignupViewModel> with $SignupForm {
-  const SignupView({Key? key}) : super(key: key);
+  const SignupView({super.key});
 
   @override
   Widget builder(

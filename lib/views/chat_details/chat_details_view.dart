@@ -8,8 +8,7 @@ import 'chat_details_viewmodel.dart';
 
 class ChatDetailsView extends StackedView<ChatDetailsViewModel>
     with $BottomTextfield {
-  ChatDetailsView({Key? key, this.avatar, this.name, required this.reciversId})
-      : super(key: key);
+  ChatDetailsView({super.key, this.avatar, this.name, required this.reciversId});
 
   final String? avatar;
   final String? name;

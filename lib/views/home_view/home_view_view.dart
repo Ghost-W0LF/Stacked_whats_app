@@ -7,7 +7,7 @@ import 'package:stacked_app/views/home_view/widget/user_list.dart';
 import 'home_view_viewmodel.dart';
 
 class HomeViewView extends StackedView<HomeViewViewModel> {
-  const HomeViewView({Key? key}) : super(key: key);
+  const HomeViewView({super.key});
 
   @override
   Widget builder(
