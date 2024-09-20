@@ -8,11 +8,11 @@
 import 'package:flutter/material.dart' as _i7;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_app/views/chat_details/chat_details_view.dart' as _i5;
-import 'package:stacked_app/views/home_view/home_view_view.dart' as _i4;
-import 'package:stacked_app/views/login/login_view.dart' as _i3;
-import 'package:stacked_app/views/signup/signup_view.dart' as _i6;
-import 'package:stacked_app/views/startup/startup_view.dart' as _i2;
+import 'package:stacked_app/ui/views/chat_details/chat_details_view.dart' as _i5;
+import 'package:stacked_app/ui/views/home_view/home_view_view.dart' as _i4;
+import 'package:stacked_app/ui/views/login/login_view.dart' as _i3;
+import 'package:stacked_app/ui/views/signup/signup_view.dart' as _i6;
+import 'package:stacked_app/ui/views/startup/startup_view.dart' as _i2;
 import 'package:stacked_services/stacked_services.dart' as _i8;
 
 class Routes {

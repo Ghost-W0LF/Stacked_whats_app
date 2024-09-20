@@ -12,26 +12,26 @@ import 'package:flutter/material.dart' as _i7;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i6;
-import 'package:stacked_app/views/chat_details/service/cloud_firestore_service.dart' as _i16;
-import 'package:stacked_app/views/home_view/service/fetch_user_data_service.dart' as _i17;
-import 'package:stacked_app/views/login/services/firebase_auth_service.dart' as _i15;
-import 'package:stacked_app/views/login/services/login_service.dart' as _i10;
-import 'package:stacked_app/views/signup/service/signup_service.dart' as _i13;
+import 'package:stacked_app/ui/views/chat_details/service/cloud_firestore_service.dart' as _i16;
+import 'package:stacked_app/ui/views/home_view/service/fetch_user_data_service.dart' as _i17;
+import 'package:stacked_app/ui/views/login/services/firebase_auth_service.dart' as _i15;
+import 'package:stacked_app/ui/views/login/services/login_service.dart' as _i10;
+import 'package:stacked_app/ui/views/signup/service/signup_service.dart' as _i13;
 import 'package:stacked_app/services/token_storage_service.dart' as _i12;
-import 'package:stacked_app/views/chat_details/model/chat_details_model.dart'
+import 'package:stacked_app/ui/views/chat_details/model/chat_details_model.dart'
     as _i22;
-import 'package:stacked_app/views/chat_details/Repository/chat_repository_service.dart'
+import 'package:stacked_app/ui/views/chat_details/Repository/chat_repository_service.dart'
     as _i21;
-import 'package:stacked_app/views/chat_details/Repository/get_recived_chat_service.dart'
+import 'package:stacked_app/ui/views/chat_details/Repository/get_recived_chat_service.dart'
     as _i23;
-import 'package:stacked_app/views/chat_details/service/chat_service.dart'
+import 'package:stacked_app/ui/views/chat_details/service/chat_service.dart'
     as _i20;
-import 'package:stacked_app/views/home_view/model/firebse_user_model.dart'
+import 'package:stacked_app/ui/views/home_view/model/firebse_user_model.dart'
     as _i19;
-import 'package:stacked_app/views/home_view/repositort/user_data_repository_service.dart'
+import 'package:stacked_app/ui/views/home_view/repositort/user_data_repository_service.dart'
     as _i18;
-import 'package:stacked_app/views/login/model/login_request_model.dart' as _i11;
-import 'package:stacked_app/views/signup/model/signup_request_model.dart'
+import 'package:stacked_app/ui/views/login/model/login_request_model.dart' as _i11;
+import 'package:stacked_app/ui/views/signup/model/signup_request_model.dart'
     as _i14;
 import 'package:stacked_services/stacked_services.dart' as _i5;
 

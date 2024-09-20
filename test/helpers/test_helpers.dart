@@ -1,23 +1,23 @@
 import 'package:mockito/annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:stacked_app/views/login/services/login_service.dart';
+import 'package:stacked_app/ui/views/login/services/login_service.dart';
 import 'package:stacked_app/services/token_storage_service.dart';
 
-import 'package:stacked_app/views/signup/service/signup_service.dart';
+import 'package:stacked_app/ui/views/signup/service/signup_service.dart';
 
-import 'package:stacked_app/views/login/services/firebase_auth_service.dart';
+import 'package:stacked_app/ui/views/login/services/firebase_auth_service.dart';
 
-import 'package:stacked_app/views/chat_details/service/cloud_firestore_service.dart';
+import 'package:stacked_app/ui/views/chat_details/service/cloud_firestore_service.dart';
 
-import 'package:stacked_app/views/home_view/service/fetch_user_data_service.dart';
+import 'package:stacked_app/ui/views/home_view/service/fetch_user_data_service.dart';
 
-import 'package:stacked_app/views/home_view/repositort/user_data_repository_service.dart';
+import 'package:stacked_app/ui/views/home_view/repositort/user_data_repository_service.dart';
 
-import 'package:stacked_app/views/chat_details/service/chat_service.dart';
+import 'package:stacked_app/ui/views/chat_details/service/chat_service.dart';
 
-import 'package:stacked_app/views/chat_details/Repository/chat_repository_service.dart';
+import 'package:stacked_app/ui/views/chat_details/Repository/chat_repository_service.dart';
 
-import 'package:stacked_app/views/chat_details/Repository/get_recived_chat_service.dart';
+import 'package:stacked_app/ui/views/chat_details/Repository/get_recived_chat_service.dart';
 
 // @stacked-import
 @GenerateMocks([], customMocks: [
