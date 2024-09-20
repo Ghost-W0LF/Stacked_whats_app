@@ -4,7 +4,7 @@ import 'package:stacked_app/ui/common/app_strings.dart';
 import 'package:stacked_app/ui/common/validator/text_form_validator.dart';
 import 'package:stacked_app/views/login/login_view.form.dart';
 import 'package:stacked_app/views/login/login_viewmodel.dart';
-import 'package:stacked_app/widgets/cust_text_formfield.dart';
+import 'package:stacked_app/widgets/primary_text_formfield.dart';
 
 class LoginForm extends StackedView<LoginViewModel> with $LoginView {
   const LoginForm({
@@ -21,7 +21,7 @@ class LoginForm extends StackedView<LoginViewModel> with $LoginView {
         //
         //eamil
 
-        CustTextFormField(
+        PrimaryTextFormField(
           controller: usernameController,
           hintText: email,
           iconData: Icons.email,
@@ -43,7 +43,7 @@ class LoginForm extends StackedView<LoginViewModel> with $LoginView {
         //
         //
         //password
-        CustTextFormField(
+        PrimaryTextFormField(
           controller: passwordController,
           obscureText: true,
           hintText: password,

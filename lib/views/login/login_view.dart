@@ -7,7 +7,7 @@ import 'package:stacked_app/views/login/widgets/login_footer.dart';
 import 'package:stacked_app/views/login/widgets/login_form.dart';
 import 'package:stacked_app/views/login/widgets/login_headder.dart';
 import 'package:stacked_app/widgets/primary_button.dart';
-import 'package:stacked_app/widgets/cust_divider.dart';
+import 'package:stacked_app/widgets/foot_divider.dart';
 
 import 'login_viewmodel.dart';
 
@@ -59,7 +59,7 @@ class LoginView extends StackedView<LoginViewModel> {
         //
         //Divider
         const SizedBox(height: 30),
-        const CustDivider(),
+        const FootDivider(),
         //
 
         //Footer

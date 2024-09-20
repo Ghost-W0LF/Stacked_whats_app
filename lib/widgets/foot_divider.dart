@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 ///
 ///Thickness is set to 2
 
-class CustDivider extends StatelessWidget {
-  const CustDivider({
+class FootDivider extends StatelessWidget {
+  const FootDivider({
     super.key,
   });
 

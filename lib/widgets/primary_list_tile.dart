@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// Creates a list tile.
 
-class CustListTile extends StatelessWidget {
+class PrimaryListTile extends StatelessWidget {
   ///Creates a list tile.
   ///
   ///Returns Containers of shape circle for Image and a Text widget for the [title] and subtitle.
@@ -10,7 +10,7 @@ class CustListTile extends StatelessWidget {
   ///[leading] is a bool set false to hide by default
   ///[title] is the title of the list tile.
   ///[tralingIcon] to set the leading icon
-  const CustListTile(
+  const PrimaryListTile(
       {super.key,
       required this.title,
       this.leading = false,

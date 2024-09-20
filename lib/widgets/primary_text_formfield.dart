@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 /// To create a TextForm Field
 
-class CustTextFormField extends StatelessWidget {
+class PrimaryTextFormField extends StatelessWidget {
   /// A custom `TextFormField` widget for the creation of text input fields.
   ///
   /// Creates a [FormField] that contains a [TextField],
   /// [HintText],[prefixIcon],[validator],[controller] are the parameters.
   /// BorderRadius is set defautl to [10].
   /// [obscureText]is false by default, set true to hide the text
-  const CustTextFormField({
+  const PrimaryTextFormField({
     super.key,
     this.hintText,
     this.validator,

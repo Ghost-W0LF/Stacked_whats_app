@@ -3,7 +3,7 @@ import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_app/ui/common/app_strings.dart';
 import 'package:stacked_app/ui/common/validator/text_form_validator.dart';
 import 'package:stacked_app/views/signup/widgets/signup_form.form.dart';
-import 'package:stacked_app/widgets/cust_text_formfield.dart';
+import 'package:stacked_app/widgets/primary_text_formfield.dart';
 
 @FormView(fields: [
   FormTextField(
@@ -34,7 +34,7 @@ class SignupForm extends StatelessWidget with $SignupForm {
           children: [
             Expanded(
               //user name
-              child: CustTextFormField(
+              child: PrimaryTextFormField(
                 controller: fullnameController,
                 validator: TextFormValidators.userNameValidators,
                 hintText: firstName,
@@ -48,7 +48,7 @@ class SignupForm extends StatelessWidget with $SignupForm {
         ),
         //
         //email
-        CustTextFormField(
+        PrimaryTextFormField(
           controller: emailController,
           validator: TextFormValidators.emailValidators,
           hintText: email,
@@ -59,7 +59,7 @@ class SignupForm extends StatelessWidget with $SignupForm {
         ),
         //
         //password
-        CustTextFormField(
+        PrimaryTextFormField(
           controller: passwordController,
           validator: TextFormValidators.passwordValidators,
           hintText: password,
