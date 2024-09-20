@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked_app/app/app.locator.dart';
 import 'package:stacked_app/app/app.router.dart';
 import 'package:stacked_app/ui/common/app_strings.dart';
-import 'package:stacked_app/widgets/cust_button.dart';
+import 'package:stacked_app/widgets/primary_button.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class LoginFooter extends StatelessWidget {
@@ -21,7 +21,7 @@ class LoginFooter extends StatelessWidget {
         ),
         //
         //Signup Button
-        CustButton(
+        PrimaryButton(
           text: signup,
           isTextButton: true,
           onPressed: () {

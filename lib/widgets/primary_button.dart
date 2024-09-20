@@ -3,7 +3,7 @@ import 'package:stacked_app/ui/common/app_colors.dart';
 
 /// Creates Text or Eleveted button
 
-class CustButton extends StatelessWidget {
+class PrimaryButton extends StatelessWidget {
   /// creates a button
   ///
   /// Takes the parameters [onPressed],[text],[isTextButton]
@@ -11,7 +11,7 @@ class CustButton extends StatelessWidget {
   /// else will return elevated button
   /// By defult [isTextButton] is false
   /// Color is Set to Tcolors.whatsAppGreen
-  const CustButton({
+  const PrimaryButton({
     super.key,
     this.onPressed,
     required this.text,

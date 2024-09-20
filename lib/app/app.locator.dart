@@ -12,11 +12,11 @@ import 'package:stacked_services/src/navigation/navigation_service.dart';
 import 'package:stacked_services/src/snackbar/snackbar_service.dart';
 import 'package:stacked_shared/stacked_shared.dart';
 
-import '../services/cloud_firestore_service.dart';
-import '../services/fetch_user_data_service.dart';
-import '../services/firebase_auth_service.dart';
-import '../services/login_service.dart';
-import '../services/signup_service.dart';
+import '../views/chat_details/service/cloud_firestore_service.dart';
+import '../views/home_view/service/fetch_user_data_service.dart';
+import '../views/login/services/firebase_auth_service.dart';
+import '../views/login/services/login_service.dart';
+import '../views/signup/service/signup_service.dart';
 import '../services/token_storage_service.dart';
 import '../views/chat_details/Repository/chat_repository_service.dart';
 import '../views/chat_details/Repository/get_recived_chat_service.dart';

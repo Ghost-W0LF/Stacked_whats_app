@@ -1,15 +1,15 @@
 import 'package:mockito/annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:stacked_app/services/login_service.dart';
+import 'package:stacked_app/views/login/services/login_service.dart';
 import 'package:stacked_app/services/token_storage_service.dart';
 
-import 'package:stacked_app/services/signup_service.dart';
+import 'package:stacked_app/views/signup/service/signup_service.dart';
 
-import 'package:stacked_app/services/firebase_auth_service.dart';
+import 'package:stacked_app/views/login/services/firebase_auth_service.dart';
 
-import 'package:stacked_app/services/cloud_firestore_service.dart';
+import 'package:stacked_app/views/chat_details/service/cloud_firestore_service.dart';
 
-import 'package:stacked_app/services/fetch_user_data_service.dart';
+import 'package:stacked_app/views/home_view/service/fetch_user_data_service.dart';
 
 import 'package:stacked_app/views/home_view/repositort/user_data_repository_service.dart';
 

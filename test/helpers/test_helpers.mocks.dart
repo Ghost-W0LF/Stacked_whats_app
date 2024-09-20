@@ -12,11 +12,11 @@ import 'package:flutter/material.dart' as _i7;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i6;
-import 'package:stacked_app/services/cloud_firestore_service.dart' as _i16;
-import 'package:stacked_app/services/fetch_user_data_service.dart' as _i17;
-import 'package:stacked_app/services/firebase_auth_service.dart' as _i15;
-import 'package:stacked_app/services/login_service.dart' as _i10;
-import 'package:stacked_app/services/signup_service.dart' as _i13;
+import 'package:stacked_app/views/chat_details/service/cloud_firestore_service.dart' as _i16;
+import 'package:stacked_app/views/home_view/service/fetch_user_data_service.dart' as _i17;
+import 'package:stacked_app/views/login/services/firebase_auth_service.dart' as _i15;
+import 'package:stacked_app/views/login/services/login_service.dart' as _i10;
+import 'package:stacked_app/views/signup/service/signup_service.dart' as _i13;
 import 'package:stacked_app/services/token_storage_service.dart' as _i12;
 import 'package:stacked_app/views/chat_details/model/chat_details_model.dart'
     as _i22;

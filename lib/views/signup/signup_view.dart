@@ -3,7 +3,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_app/ui/common/app_strings.dart';
 import 'package:stacked_app/views/signup/widgets/signup_form.dart';
 import 'package:stacked_app/views/signup/widgets/signup_form.form.dart';
-import 'package:stacked_app/widgets/cust_button.dart';
+import 'package:stacked_app/widgets/primary_button.dart';
 
 import 'signup_viewmodel.dart';
 
@@ -39,7 +39,7 @@ class SignupView extends StackedView<SignupViewModel> with $SignupForm {
             const SignupForm(),
             //
             //Signup button
-            CustButton(
+            PrimaryButton(
               text: creatAccount,
               onPressed: () {
                 viewModel.createAccount();
