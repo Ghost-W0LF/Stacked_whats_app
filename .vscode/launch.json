@@ -7,7 +7,9 @@
         {
             "name": "stacked_app",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "flutterMode": "debug",
+            "args": ["-v"]
         },
         {
             "name": "stacked_app (profile mode)",

@@ -28,8 +28,6 @@ class ChatService extends ChangeNotifier {
         .then((value) => debugPrint("Message added to subcollection"))
         .catchError((error) => debugPrint("Error adding message: $error"));
 
-      
-
-    // Add the chat message under the "Messages" subcollection, where the subcollection's document ID is the receiverId
+    
   }
 }
